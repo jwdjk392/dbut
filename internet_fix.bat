@@ -22,7 +22,7 @@ COLOR 17
 CLS
 :INIT
 ECHO ================================
-ECHO 인터넷 접속 복구 도구 By 배정완 v1.0.0
+ECHO 인터넷 접속 복구 도구 By 배정완 v1.0.1
 ECHO ================================
 ECHO 면책조항: 제작자는 이 프로그램으로 발생하는 여러 결과를 책임지지 않습니다. 이 프로그램은 교육적 목적으로 제작되었습니다.
 ECHO ================================
@@ -41,7 +41,7 @@ IF %ERRORLEVEL% == 1 (
 :CONTINUE
 CLS
 ECHO 동의 확인됨. 작업을 시작합니다.
-NETSH DNS ADD ENCRYPTION SERVER=1.1.1.1 DOHTEMPLATE=https://cloudflare-dns.com/dns-query autoupgrade=no udpfallback=no
+NETSH DNS ADD ENCRYPTION SERVER=8.8.8.8 DOHTEMPLATE=https://dns.google/dns-query autoupgrade=no udpfallback=no
 NETSH INTERFACE IPV4 DELETE DNSSERVER "Wi-Fi" all
 NETSH INTERFACE IPV4 SET DNSSERVER "Wi-Fi" source=dhcp
 IPCONFIG /FLUSHDNS
